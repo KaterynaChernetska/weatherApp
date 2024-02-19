@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { getTodayWeather, getWeeklyForecast } from "./services/weatheApi";
 import { getTrips } from "./services/trips";
-import { SearchPanel } from "./components/SearchPanel/SearchPanel";
+import SearchPanel  from "./components/SearchPanel";
+import TripsList from "./components/TripsList";
 
 const defaultTrips = getTrips().sort(
   (a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime()
@@ -9,7 +10,6 @@ const defaultTrips = getTrips().sort(
 
 function App() {
   const [trips, setTrips] = useState(defaultTrips);
-
 
   console.log(trips);
   // useEffect(() => {
@@ -28,19 +28,20 @@ function App() {
   //   fetchData();
   // }, []);
   const handleSearch = (query) => {
-    const filteredTrips = defaultTrips.filter(
-      (trip) => trip.title.toLowerCase().includes(query.toLowerCase())
+    const filteredTrips = defaultTrips.filter((trip) =>
+      trip.title.toLowerCase().includes(query.toLowerCase())
     );
     setTrips(filteredTrips);
   };
-  
 
   return (
     <>
-      <header></header>
+      <header>
+        <a href="/">Weather Forecast</a>
+      </header>
       <main>
         <SearchPanel FilterTrips={handleSearch} />
-        
+        <TripsList trips={trips}/>
       </main>
       <aside></aside>
     </>
