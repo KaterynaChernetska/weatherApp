@@ -1,46 +1,49 @@
 import { useEffect, useState } from "react";
 import { getTodayWeather, getWeeklyForecast } from "./services/weatheApi";
+import { getTrips } from "./services/trips";
+import { SearchPanel } from "./components/SearchPanel/SearchPanel";
+
+const defaultTrips = getTrips().sort(
+  (a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime()
+);
 
 function App() {
-  const [weatherData, setWeatherData] = useState(null);
+  const [trips, setTrips] = useState(defaultTrips);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
 
-        const response = await getWeeklyForecast('London', '2024-10-19', '2024-11-19' );
-        // const response = await getTodayWeather("London")
-      
-        console.log(response)
+  console.log(trips);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
 
-        // const response = await fetch(
-        //   "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/London,UK?key=G5SUHRFAGCTKSALBLDCA7FVPK"
-        // );
+  //       const response = await getWeeklyForecast('Copenhagen', '2024-10-19', '2024-11-19' );
 
-        // if (!response.ok) {
-        //   throw new Error("Network response was not ok");
-        // }
+  //       console.log(response)
 
-        // const data = await response.json();
-        // console.log(data)
-        // setWeatherData(data);
-      } catch (error) {
-        console.error("Error fetching weather data:", error);
-      }
-    };
+  //     } catch (error) {
+  //       console.error("Error fetching weather data:", error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
+  const handleSearch = (query) => {
+    const filteredTrips = defaultTrips.filter(
+      (trip) => trip.title.toLowerCase().includes(query.toLowerCase())
+    );
+    setTrips(filteredTrips);
+  };
+  
 
   return (
-    <div>
-      <h1>Weather Data</h1>
-      {weatherData ? (
-        <pre>{JSON.stringify(weatherData, null, 2)}</pre>
-      ) : (
-        <p>Loading...</p>
-      )}
-    </div>
+    <>
+      <header></header>
+      <main>
+        <SearchPanel FilterTrips={handleSearch} />
+        
+      </main>
+      <aside></aside>
+    </>
   );
 }
 

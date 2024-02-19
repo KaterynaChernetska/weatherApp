@@ -1,0 +1,16 @@
+[
+  {
+    "id": "4c7564ad-fafc-4641-a692-55a683de7fbe",
+    "title": "Berlin",
+    "startDate": "2024-10-19",
+    "endDate": "2024-10-29",
+    "image": "../assets/cities/Berlin.jpg"
+  },
+  {
+    "id": "d96b8374-3efa-4124-8e38-1edd11bd07f5",
+    "title": "Amsterdam",
+    "startDate": "2024-05-19",
+    "endDate": "2024-05-25",
+    "image": "../assets/cities/Amsterdam.jpg"
+  }
+]

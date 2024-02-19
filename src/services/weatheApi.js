@@ -3,7 +3,7 @@ const API_URL =
 
 const API_KEY = "G5SUHRFAGCTKSALBLDCA7FVPK";
 
-// usually I would hide it in .env file but I need my app to be working in gh-pages demo
+// usually I would hide API_KEY in .env file but I need my app to be working in gh-pages demo
 
 export const getWeeklyForecast = async (city, startDate, endDate) => {
   try {
