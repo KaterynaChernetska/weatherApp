@@ -1,33 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import { getTodayWeather, getWeeklyForecast } from "./services/weatheApi";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [weatherData, setWeatherData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+
+        const response = await getWeeklyForecast('London', '2024-10-19', '2024-11-19' );
+        // const response = await getTodayWeather("London")
+      
+        console.log(response)
+
+        // const response = await fetch(
+        //   "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/London,UK?key=G5SUHRFAGCTKSALBLDCA7FVPK"
+        // );
+
+        // if (!response.ok) {
+        //   throw new Error("Network response was not ok");
+        // }
+
+        // const data = await response.json();
+        // console.log(data)
+        // setWeatherData(data);
+      } catch (error) {
+        console.error("Error fetching weather data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Kateryna Chernetska</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <h1>Weather Data</h1>
+      {weatherData ? (
+        <pre>{JSON.stringify(weatherData, null, 2)}</pre>
+      ) : (
+        <p>Loading...</p>
+      )}
+    </div>
+  );
 }
 
-export default App
+export default App;
