@@ -12,5 +12,26 @@
     "startDate": "2024-05-19",
     "endDate": "2024-05-25",
     "image": "weatherApp/src/assets/cities/Amsterdam.jpg"
+  },
+  {
+    "id": "d96b8374-3efa-4124-8e38-1edddd11bd07f5",
+    "title": "Amsterdam",
+    "startDate": "2024-05-19",
+    "endDate": "2024-05-25",
+    "image": "weatherApp/src/assets/cities/Amsterdam.jpg"
+  },
+  {
+    "id": "d96b8374-3efa-4124-8e38-1eddqq11bd07f5",
+    "title": "Amsterdam",
+    "startDate": "2024-05-19",
+    "endDate": "2024-05-25",
+    "image": "weatherApp/src/assets/cities/Amsterdam.jpg"
+  },
+  {
+    "id": "d96b8374-3efa-4124-8e38-1eddaaqq11bd07f5",
+    "title": "Amsterdam",
+    "startDate": "2024-05-19",
+    "endDate": "2024-05-25",
+    "image": "weatherApp/src/assets/cities/Amsterdam.jpg"
   }
 ]

@@ -16,8 +16,8 @@ export const getWeeklyForecast = async (city, startDate, endDate) => {
     }
 
     const data = await response.json();
-    // console.log(data);
-    return data;
+    console.log(data);
+    // return data;
   } catch (error) {
     console.error("Error fetching weather data:", error);
   }
@@ -35,8 +35,8 @@ export const getTodayWeather = async (city) => {
     }
 
     const data = await response.json();
-    // console.log(data);
-    return data;
+    console.log(data);
+    // return data;
   } catch (error) {
     console.error("Error fetching weather data:", error);
   }

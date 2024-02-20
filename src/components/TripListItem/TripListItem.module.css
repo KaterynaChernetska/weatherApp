@@ -1,0 +1,19 @@
+.tripListItem {
+  border: 1px solid #f2f4f8;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.tripListItem:hover,
+.tripListItem:active {
+  border: 1px solid #4276e7;
+}
+
+.tripListImage {
+  width: 200px;
+  height: 160px;
+}
+
+.tripListInfo {
+  padding: 10px;
+}

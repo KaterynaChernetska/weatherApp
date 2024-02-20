@@ -26,7 +26,7 @@ body {
   font-style: normal;
   line-height: 1.5;
   text-rendering: optimizespeed;
-  color: #000000;
+  color: #6C6D6E ;
   background-color: #ffffff;
 }
 
@@ -53,7 +53,7 @@ select {
   clip-path: inset(50%);
 }
 
-.button {
+/* button {
   display: block;
   width: 100%;
   min-height: 45px;
@@ -65,4 +65,9 @@ select {
   border-radius: 1px;
   cursor: pointer;
   transition: background-color 0.2s ease;
+} */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }

@@ -15,24 +15,24 @@ function App() {
   const [weeklyData, setWeeklyData] = useState("");
 
   // console.log(trips);
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const responseForWeek = await getWeeklyForecast(
-  //         "Copenhagen",
-  //         "2024-10-19",
-  //         "2024-11-19"
-  //       );
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await getWeeklyForecast(
+          "Berlin",
+          "2024-10-19",
+          "2024-11-19"
+        );
 
-  //       console.log("selected", selectedTrip);
-  //       console.log(response);
-  //     } catch (error) {
-  //       console.error("Error fetching weather data:", error);
-  //     }
-  //   };
+        console.log("selected", selectedTrip);
+        console.log(response);
+      } catch (error) {
+        console.error("Error fetching weather data:", error);
+      }
+    };
 
-  //   fetchData();
-  // }, [selectedTrip]);
+    fetchData();
+  }, [selectedTrip]);
 
   const handleSearch = (query) => {
     const filteredTrips = defaultTrips.filter((trip) =>
@@ -53,11 +53,12 @@ function App() {
           Weather <span className="logoBold">Forecast</span>
         </a>
         <SearchPanel FilterTrips={handleSearch} />
+        <div className="tripsContainer">
         <TripsList trips={trips} handleSelectTrip={handleSelectTrip} />
+        <button className="addTripBtn" type="button">+ <br/>Add trip </button>
+        </div>
       </main>
-      <aside className="asideContainer">
-
-      </aside>
+      <aside className="asideContainer"></aside>
     </div>
   );
 }

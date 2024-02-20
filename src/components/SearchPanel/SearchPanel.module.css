@@ -12,7 +12,7 @@
   padding: 10px;
   outline: none;
   border-radius: 5px;
-  color: #0000;
+
 }
 .searchInput::placeholder {
   padding-left: 30px;
