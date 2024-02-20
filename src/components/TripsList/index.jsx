@@ -1,11 +1,14 @@
 import TripListItem from "../TripListItem";
 
-const TripsList = ({ trips }) => {
+const TripsList = ({ trips, handleSelectTrip }) => {
   return (
     <ul>
- 
       {trips.map((trip) => (
-        <TripListItem key={trip.id} trip={trip} />
+        <TripListItem
+          key={trip.id}
+          trip={trip}
+          handleSelectTrip={handleSelectTrip}
+        />
       ))}
     </ul>
   );

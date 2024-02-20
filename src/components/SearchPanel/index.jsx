@@ -2,7 +2,7 @@ import { useState } from "react";
 import SearchIcon from "../../assets/icons/search.svg";
 import style from "./SearchPanel.module.css";
 
- const SearchPanel = ({ FilterTrips }) => {
+const SearchPanel = ({ FilterTrips }) => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleSearchInputChange = (event) => {
@@ -11,8 +11,9 @@ import style from "./SearchPanel.module.css";
   };
 
   return (
-    <div>
+    <div className={style.searchInputContainer}>
       <input
+        className={style.searchInput}
         value={searchQuery}
         name="search"
         type="text"

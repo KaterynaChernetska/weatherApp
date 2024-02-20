@@ -1,4 +1,30 @@
-.searchIcon{
-    color: blue;
-    fill: blue;
+.searchInputContainer {
+  padding: 20px 0px;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchInput {
+  border: none;
+  background-color: #f2f4f8;
+  padding: 10px;
+  outline: none;
+  border-radius: 5px;
+  color: #0000;
+}
+.searchInput::placeholder {
+  padding-left: 30px;
+  color: black;
+  font-weight: 500;
+}
+.searchIcon {
+  position: absolute;
+  cursor: pointer;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
 }
