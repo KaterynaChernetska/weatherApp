@@ -4,6 +4,7 @@ import { getTrips } from "./services/trips";
 import SearchPanel from "./components/SearchPanel";
 import TripsList from "./components/TripsList";
 import "./App.css";
+import SideBar from "./components/SideBar";
 
 const defaultTrips = getTrips().sort(
   (a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime()
@@ -11,21 +12,19 @@ const defaultTrips = getTrips().sort(
 
 function App() {
   const [trips, setTrips] = useState(defaultTrips);
-  const [selectedTrip, setSelectedTrip] = useState(" ");
+  const [selectedTrip, setSelectedTrip] = useState(defaultTrips[0]);
   const [weeklyData, setWeeklyData] = useState("");
+  const [dayData, setDayData] = useState("");
 
   // console.log(trips);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await getWeeklyForecast(
-          "Berlin",
-          "2024-10-19",
-          "2024-11-19"
-        );
+        const response = await getTodayWeather(selectedTrip.title);
 
         console.log("selected", selectedTrip);
-        console.log(response);
+        // console.log("response", response.days[0]);
+        setDayData(response);
       } catch (error) {
         console.error("Error fetching weather data:", error);
       }
@@ -54,11 +53,16 @@ function App() {
         </a>
         <SearchPanel FilterTrips={handleSearch} />
         <div className="tripsContainer">
-        <TripsList trips={trips} handleSelectTrip={handleSelectTrip} />
-        <button className="addTripBtn" type="button">+ <br/>Add trip </button>
+          <TripsList trips={trips} handleSelectTrip={handleSelectTrip} />
+          <button className="addTripBtn" type="button">
+            + <br />
+            Add trip{" "}
+          </button>
         </div>
       </main>
-      <aside className="asideContainer"></aside>
+      <aside className="asideContainer">
+        <SideBar dayData={dayData} selectedTrip={selectedTrip}/>
+      </aside>
     </div>
   );
 }
