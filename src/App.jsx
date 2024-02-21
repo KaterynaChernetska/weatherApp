@@ -5,6 +5,7 @@ import SearchPanel from "./components/SearchPanel";
 import TripsList from "./components/TripsList";
 import "./App.css";
 import SideBar from "./components/SideBar";
+import Loader from "./components/Loader";
 
 const defaultTrips = getTrips().sort(
   (a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime()
@@ -15,10 +16,12 @@ function App() {
   const [selectedTrip, setSelectedTrip] = useState(defaultTrips[0]);
   const [weeklyData, setWeeklyData] = useState("");
   const [dayData, setDayData] = useState("");
+  const [loading, setLoading] = useState(false);
 
   // console.log(trips);
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       try {
         const response = await getTodayWeather(selectedTrip.title);
 
@@ -27,6 +30,8 @@ function App() {
         setDayData(response);
       } catch (error) {
         console.error("Error fetching weather data:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -60,9 +65,14 @@ function App() {
           </button>
         </div>
       </main>
-      <aside className="asideContainer">
-        <SideBar dayData={dayData} selectedTrip={selectedTrip}/>
-      </aside>
+    
+     
+        <SideBar
+          dayData={dayData}
+          selectedTrip={selectedTrip}
+          loading={loading}
+        />
+    
     </div>
   );
 }

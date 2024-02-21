@@ -26,7 +26,7 @@ body {
   font-style: normal;
   line-height: 1.5;
   text-rendering: optimizespeed;
-  color: #6C6D6E ;
+  color: #6c6d6e;
   background-color: #ffffff;
 }
 
@@ -53,21 +53,11 @@ select {
   clip-path: inset(50%);
 }
 
-/* button {
-  display: block;
-  width: 100%;
-  min-height: 45px;
-  padding: 10px 15px;
-  font-size: 16px;
-  text-align: center;
-  text-decoration: none;
-  border: none;
-  border-radius: 1px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-} */
 ul {
   list-style: none;
   padding: 0;
+  margin: 0;
+}
+p {
   margin: 0;
 }

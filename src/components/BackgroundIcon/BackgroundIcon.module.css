@@ -1,0 +1,25 @@
+.IconsContainer div {
+  width: 250px;
+  height: 200px;
+  opacity: 0.1;
+  position: absolute;
+}
+.backgroundIcon1 {
+  top: 60px;
+  left: -80px;
+}
+
+.backgroundIcon2 {
+  bottom: 20px;
+  left: -60px;
+}
+
+.backgroundIcon3 {
+    top: 100px;
+    right: -40px;
+}
+
+.backgroundIcon4 {
+    bottom: 250px;
+    right: -100px;
+}

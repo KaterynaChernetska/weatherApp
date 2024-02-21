@@ -1,0 +1,60 @@
+.asideContainer {
+  width: 30%;
+  background-color: #110e3b;
+  position: relative;
+  color: #ffff;
+  height: 100vb;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.avatar {
+  border-radius: 50%;
+  background-color: #4dbfb1;
+  padding: 5px;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.dayOfWeek {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.temperatureContainer {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.temperature {
+  font-size: 50px;
+  position: relative;
+}
+
+.celsiusMark {
+  position: absolute;
+  font-weight: 200;
+  font-size: 18px;
+}
+.cityTitle {
+  font-weight: 200;
+  font-size: 26px;
+  margin-bottom: 100px;
+}
+
+.iconContainer {
+  width: 60px;
+  height: 60px;
+}
+
+
