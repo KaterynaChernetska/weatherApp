@@ -1,0 +1,30 @@
+.weatherList {
+  display: flex;
+  gap: 30px;
+  display: flex;
+  gap: 40px;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.weatherList li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+}
+
+.dayOfTheWeek{
+    color: #999CA3;
+}
+
+.temperature{
+    font-weight: 500;
+}

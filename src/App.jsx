@@ -6,6 +6,7 @@ import TripsList from "./components/TripsList";
 import "./App.css";
 import SideBar from "./components/SideBar";
 import Loader from "./components/Loader";
+import WeatherList from "./components/WeatherList";
 
 const defaultTrips = getTrips().sort(
   (a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime()
@@ -18,16 +19,31 @@ function App() {
   const [dayData, setDayData] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // console.log(trips);
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       try {
         const response = await getTodayWeather(selectedTrip.title);
-
-        console.log("selected", selectedTrip);
-        // console.log("response", response.days[0]);
+        // console.log("selected", selectedTrip);
         setDayData(response);
+      } catch (error) {
+        console.error("Error fetching weather data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [selectedTrip]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await getWeeklyForecast(selectedTrip.title, selectedTrip.startDate,selectedTrip.endDate);
+        console.log("selected", selectedTrip);
+        console.log("response", response);
+        setWeeklyData(response);
       } catch (error) {
         console.error("Error fetching weather data:", error);
       } finally {
@@ -46,7 +62,6 @@ function App() {
   };
 
   const handleSelectTrip = (tripInfo) => {
-    // console.log(tripInfo);
     setSelectedTrip(tripInfo);
   };
 
@@ -57,22 +72,21 @@ function App() {
           Weather <span className="logoBold">Forecast</span>
         </a>
         <SearchPanel FilterTrips={handleSearch} />
-        <div className="tripsContainer">
+        <section className="tripsContainer">
           <TripsList trips={trips} handleSelectTrip={handleSelectTrip} />
           <button className="addTripBtn" type="button">
             + <br />
             Add trip{" "}
           </button>
-        </div>
+        </section>
+       <WeatherList weeklyData={weeklyData}/>
       </main>
-    
-     
-        <SideBar
-          dayData={dayData}
-          selectedTrip={selectedTrip}
-          loading={loading}
-        />
-    
+
+      <SideBar
+        dayData={dayData}
+        selectedTrip={selectedTrip}
+        loading={loading}
+      />
     </div>
   );
 }

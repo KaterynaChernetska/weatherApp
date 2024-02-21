@@ -9,13 +9,13 @@
 .searchInput {
   border: none;
   background-color: #f2f4f8;
-  padding: 10px;
+  padding: 10px 10px 10px 40px;
   outline: none;
   border-radius: 5px;
-
+  color: black;
+  font-weight: 500;
 }
 .searchInput::placeholder {
-  padding-left: 30px;
   color: black;
   font-weight: 500;
 }
