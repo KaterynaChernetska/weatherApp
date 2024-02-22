@@ -1,5 +1,6 @@
 import { createPortal } from "react-dom";
 import style from "./Modal.module.css";
+import AddTripForm from "./AddTripForm";
 
 const modalRoot = document.querySelector("#modal-root");
 
@@ -13,10 +14,7 @@ export const Modal = ({ onClose }) => {
             ×
           </button>
         </div>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni,
-        repellendus pariatur dolor asperiores ipsam debitis? Minus, atque sunt!
-        Ut fugiat magni quam dignissimos soluta exercitationem atque sequi
-        consequatur. Doloribus, facere.
+        <AddTripForm onClose={onClose}/>
       </div>
     </div>,
     modalRoot

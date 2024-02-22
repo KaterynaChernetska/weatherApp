@@ -30,12 +30,12 @@ function App() {
         setDayData(todayWeather);
 
         // Отримання тижневого прогнозу
-        // const weeklyForecast = await getWeeklyForecast(
-        //   selectedTrip.title,
-        //   selectedTrip.startDate,
-        //   selectedTrip.endDate
-        // );
-        // setWeeklyData(weeklyForecast);
+        const weeklyForecast = await getWeeklyForecast(
+          selectedTrip.title,
+          selectedTrip.startDate,
+          selectedTrip.endDate
+        );
+        setWeeklyData(weeklyForecast);
       } catch (error) {
         console.error("Error fetching weather data:", error);
       } finally {
@@ -50,26 +50,17 @@ function App() {
     setIsModalOpen(!isModalOpen);
   };
 
-  // const handleSearch = (query) => {
-  //   const filteredTrips = defaultTrips.filter((trip) =>
-  //     trip.title.toLowerCase().includes(query.toLowerCase())
-  //   );
-  //   // setTrips(filteredTrips);
-  //   setIsModalOpen(false);
-  // };
+  const handleSearch = (query) => {
+    const filteredTrips = defaultTrips.filter((trip) =>
+      trip.title.toLowerCase().includes(query.toLowerCase())
+    );
+    setTrips(filteredTrips);
+  };
 
   const handleSelectTrip = (tripInfo) => {
     setSelectedTrip(tripInfo);
   };
 
-
-  const handleAddTrip = () => {
-    // Validate input data
-    // Add trip
-    createNewTrip({id: nanoid(), title: selectedCity, startDate, endDate });
-    // Close modal
-    onClose();
-  };
   return (
     <div className="container">
       <main className="mainContainer">
@@ -85,7 +76,7 @@ function App() {
             Add trip{" "}
           </button>
         </section>
-        {/* <WeatherList weeklyData={weeklyData}/> */}
+        <WeatherList weeklyData={weeklyData}/>
       </main>
 
       <SideBar
