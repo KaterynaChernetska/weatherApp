@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SearchIcon from "../../assets/icons/search.svg";
+import SearchIcon from "../../../public/assets/icons/search.svg";
 import style from "./SearchPanel.module.css";
 
 const SearchPanel = ({ FilterTrips }) => {

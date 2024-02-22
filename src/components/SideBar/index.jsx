@@ -1,6 +1,6 @@
 import getDayOfWeek from "../../helpers/getDayOfWeek";
 import CountdownTimer from "../Countdown";
-import Avatar from "../../assets/icons/penguin.svg";
+import Avatar from "../../../public/assets/icons/penguin.svg";
 import style from "./SideBar.module.css";
 import Icon from "../Icon";
 
