@@ -76,7 +76,7 @@ function App() {
             Add trip{" "}
           </button>
         </section>
-        <WeatherList weeklyData={weeklyData}/>
+        <WeatherList weeklyData={weeklyData} />
       </main>
 
       <SideBar
