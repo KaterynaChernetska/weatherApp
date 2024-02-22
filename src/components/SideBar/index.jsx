@@ -7,6 +7,7 @@ import Icon from "../Icon";
 import WeatherIcons from "../BackgroundIcon";
 
 const SideBar = ({ dayData, selectedTrip }) => {
+
   const { days } = dayData;
 
   return (
