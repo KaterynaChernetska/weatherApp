@@ -9,9 +9,7 @@ import Loader from "./components/Loader";
 import WeatherList from "./components/WeatherList";
 import { Modal } from "./components/Modal";
 
-const defaultTrips = getTrips().sort(
-  (a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime()
-);
+const defaultTrips = getTrips();
 
 function App() {
   const [trips, setTrips] = useState(defaultTrips);
@@ -63,7 +61,9 @@ function App() {
   const handleSelectTrip = (tripInfo) => {
     setSelectedTrip(tripInfo);
   };
-
+const sortedTrips = trips.sort(
+  (a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime()
+);
   return (
     <div className="container">
       <main className="mainContainer">
@@ -74,7 +74,7 @@ function App() {
         </a>
         <SearchPanel FilterTrips={handleSearch} />
         <section className="tripsContainer">
-          <TripsList trips={trips} handleSelectTrip={handleSelectTrip} />
+          <TripsList trips={sortedTrips} handleSelectTrip={handleSelectTrip} />
           <button onClick={toggleModal} className="addTripBtn" type="button">
             + <br />
             Add trip{" "}
