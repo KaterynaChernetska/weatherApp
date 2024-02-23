@@ -31,12 +31,12 @@ function App() {
         setDayData(todayWeather);
 
         // Отримання тижневого прогнозу
-        // const weeklyForecast = await getWeeklyForecast(
-        //   selectedTrip.title,
-        //   selectedTrip.startDate,
-        //   selectedTrip.endDate
-        // );
-        // setWeeklyData(weeklyForecast);
+        const weeklyForecast = await getWeeklyForecast(
+          selectedTrip.title,
+          selectedTrip.startDate,
+          selectedTrip.endDate
+        );
+        setWeeklyData(weeklyForecast);
       } catch (error) {
         console.error("Error fetching weather data:", error);
         setError(true);
@@ -80,7 +80,7 @@ function App() {
             Add trip{" "}
           </button>
         </section>
-        {/* <WeatherList weeklyData={weeklyData} /> */}
+        <WeatherList weeklyData={weeklyData} />
       </main>
 
       <SideBar

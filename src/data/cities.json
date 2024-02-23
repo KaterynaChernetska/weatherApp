@@ -2,61 +2,61 @@
   {
     "id": 1,
     "name": "New York",
-    "image_url": "/assets/cities/New York.jpg"
+    "image_url": "weatherApp/public/assets/cities/New York.jpg"
   },
   {
     "id": 2,
     "name": "Paris",
-    "image_url": "/assets/cities/Paris.jpg"
+    "image_url": "weatherApp/public/assets/cities/Paris.jpg"
   },
   {
     "id": 3,
     "name": "Amsterdam",
-    "image_url": "/assets/cities/Amsterdam.jpg"
+    "image_url": "weatherApp/public/assets/cities/Amsterdam.jpg"
   },
   {
     "id": 4,
     "name": "Berlin",
-    "image_url": "/assets/cities/Berlin.jpg"
+    "image_url": "weatherApp/public/assets/cities/Berlin.jpg"
   },
   {
     "id": 5,
     "name": "Cologne",
-    "image_url": "/assets/cities/Cologne.jpg"
+    "image_url": "weatherApp/public/assets/cities/Cologne.jpg"
   },
   {
     "id": 6,
     "name": "Copenhagen",
-    "image_url": "/assets/cities/Copenhagen.jpg"
+    "image_url": "weatherApp/public/assets/cities/Copenhagen.jpg"
   },
   {
     "id": 7,
     "name": "Helsinki",
-    "image_url": "/assets/cities/Helsinki.jpg"
+    "image_url": "weatherApp/public/assets/cities/Helsinki.jpg"
   },
   {
     "id": 8,
     "name": "Kyiv",
-    "image_url": "/assets/cities/Kyiv.jpg"
+    "image_url": "weatherApp/public/assets/cities/Kyiv.jpg"
   },
   {
     "id": 9,
     "name": "London",
-    "image_url": "/assets/cities/London.jpg"
+    "image_url": "weatherApp/public/assets/cities/London.jpg"
   },
   {
     "id": 10,
     "name": "Oslo",
-    "image_url": "/assets/cities/Oslo.jpg"
+    "image_url": "weatherApp/public/assets/cities/Oslo.jpg"
   },
   {
     "id": 11,
     "name": "Prague",
-    "image_url": "/assets/cities/Prague.jpg"
+    "image_url": "weatherApp/public/assets/cities/Prague.jpg"
   },
   {
     "id": 12,
     "name": "Stockholm",
-    "image_url": "/assets/cities/Stockholm.jpg"
+    "image_url": "weatherApp/public/assets/cities/Stockholm.jpg"
   }
 ]

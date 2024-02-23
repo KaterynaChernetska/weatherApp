@@ -1,13 +1,13 @@
 import style from "./BackgroundIcon.module.css";
 
 const WeatherIcons = ({ iconName }) => {
-  // const iconPath = `weatherApp/src/assets/icons/weather/${iconName}.svg`;
+ 
   return (
     <div className={style.IconsContainer}>
       <div
         className={style.backgroundIcon1}
         style={{
-          backgroundImage: `url(/assets/icons/weather/${iconName}.svg`,
+          backgroundImage: `url(/weatherApp/public/assets/icons/weather/${iconName}.svg`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
         }}
@@ -15,7 +15,7 @@ const WeatherIcons = ({ iconName }) => {
       <div
         className={style.backgroundIcon2}
         style={{
-          backgroundImage: `url(/assets/icons/weather/${iconName}.svg`,
+          backgroundImage: `url(/weatherApp/public/assets/icons/weather/${iconName}.svg`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
         }}
@@ -23,7 +23,7 @@ const WeatherIcons = ({ iconName }) => {
       <div
         className={style.backgroundIcon3}
         style={{
-          backgroundImage: `url(/assets/icons/weather/${iconName}.svg`,
+          backgroundImage: `url(/weatherApp/public/assets/icons/weather/${iconName}.svg`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
         }}
@@ -31,7 +31,7 @@ const WeatherIcons = ({ iconName }) => {
       <div
         className={style.backgroundIcon4}
         style={{
-          backgroundImage: `url(/assets/icons/weather/${iconName}.svg`,
+          backgroundImage: `url(/weatherApp/public/assets/icons/weather/${iconName}.svg`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
         }}
